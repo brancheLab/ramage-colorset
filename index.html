@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Branche Colorset</title>
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@2.39.0/dist/full.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.tailwindcss.com/3.2.1"></script>
+	<style>
+		body, html {
+			background: #FFF2D9 !important;
+			color: #33322f;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container mx-auto my-16">
+		<h1 class="text-3xl my-8 font-bold">BrancheLab - Colorset :</h1>
+		<div class="container mx-auto" v-scope>
+			<div class="grid grid-cols-1 gap-8" v-for="colorset in colorsets">
+				<div v-for="(palette, key) in colorset">
+					<div class="flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4">
+						<div class="w-16 shrink-0">
+							<div class="h-10 flex flex-col justify-center">
+								<div class="text-sm font-semibold">{{ key }}</div>
+							</div>
+						</div>
+						<div class="min-w-0 flex-1 grid grid-cols-5 gap-x-4 gap-y-3 2xl:gap-x-2">
+							<div class="relative flex" v-for="(color, key) in palette">
+								<div class="space-y-1.5 w-full">
+									<div class="h-10 w-full rounded dark:ring-1 dark:ring-inset dark:ring-white/10"
+									:style="{backgroundColor: color}"></div>
+									<div class="px-0.5 md:flex md:justify-between md:space-x-2 2xl:space-x-0 2xl:block">
+										<div class="w-6 font-medium 2xl:w-full">{{ key }}</div>
+										<div class="font-mono lowercase">{{ color }}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="module">
+		import { createApp } from 'https://unpkg.com/petite-vue@0.2.2/dist/petite-vue.es.js'
+
+		createApp({
+			colorsets:
+			{
+				"branche-colorset":
+				{
+					content:
+					{
+						"white": "#FAFAF9",
+						"gray-100": "#c7c6c1",
+						"gray-200": "#999790",
+						"gray-300": "#33322f",
+						"black": "#22201c"
+					},
+					sepia:
+					{
+						"sepia-100": "#fffcf7",
+						"sepia-200": "#fff6e9",
+						"sepia-300": "#FFF2D9",
+						"sepia-400": "#f0d5a1",
+						"sepia-500": "#dbab75",
+					},
+					dark:
+					{
+						"dark-100": "#2e3749",
+						"dark-200": "#202838",
+						"dark-300": "#1d2434",
+						"dark-400": "#161c28",
+						"dark-500": "#121722"
+					},
+					green:
+					{
+						"green-100": "#8ddea8",
+						"green-200": "#74d8a3",
+						"green-300": "#4dd28d",
+						"green-400": "#21d075",
+						"green-500": "#209a5a"
+					},
+					pink:
+					{
+						"pink-100": "#e8bdc0",
+						"pink-200": "#f1abbd",
+						"pink-300": "#e89cb9",
+						"pink-400": "#e38bc1",
+						"pink-500": "#c268a0"
+					},
+					yellow:
+					{
+						"yellow-100": "#fade88",
+						"yellow-200": "#f6d362",
+						"yellow-300": "#f2cb48",
+						"yellow-400": "#f5ca38",
+						"yellow-500": "#d3a103"
+					},
+					orange: {
+						"orange-100": "#f6c18a",
+						"orange-200": "#f2b571",
+						"orange-300": "#eba24c",
+						"orange-400": "#f09d3a",
+						"orange-500": "#b96e20"
+					},
+					red: {
+						"red-100": "#e0958c",
+						"red-200": "#dd8e86",
+						"red-300": "#d77e79",
+						"red-400": "#ce6766",
+						"red-500": "#9c4241"
+					},
+					purple: {
+						"purple-100": "#b6a3d2",
+						"purple-200": "#a796cb",
+						"purple-300": "#a589c2",
+						"purple-400": "#a87aca",
+						"purple-500": "#6f5791"
+					},
+					blue: {
+						"blue-100": "#92a9d5",
+						"blue-200": "#758bc4",
+						"blue-300": "#6376b6",
+						"blue-400": "#5b6cb0",
+						"blue-500": "#3e4a72"
+					},
+					cyan: {
+						"cyan-100": "#bfe0db",
+						"cyan-200": "#b8dcd7",
+						"cyan-300": "#97c9c1",
+						"cyan-400": "#7bc3b8",
+						"cyan-500": "#43787d"
+					}
+				}
+			}
+		}).mount()
+	  </script>
+</body>
+</html>
